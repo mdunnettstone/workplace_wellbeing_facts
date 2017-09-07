@@ -1,0 +1,66 @@
+<div class = "hero">
+  <div class = "frosty col-10 offset-1 text-center">
+    <h1 class = 'my-3 my-lg-4'>Discover stats about workplace well-being <span class = "badge badge-info">FREE</span></h1>
+    <h4 class = 'my-1 my-lg-3'>All stats sourced and categorised.</h4>
+    <br />
+    <br />
+    <%= link_to random_stats_path, class: 'btn btn-turquoise mr-3 col-3' do %>
+      <i class="fa fa-random" aria-hidden="true"></i>&nbsp
+      Random
+    <% end %>
+    <%= link_to stats_path, class: 'btn btn-pink ml-3 col-3' do %>
+      <i class="fa fa-compass" aria-hidden="true"></i>&nbsp
+      Explore
+    <% end %>
+    <br />
+    <br />
+    <br />
+  </div>
+</div>
+<div class = 'clear'></div>
+<div class = "row">
+  <div class = "col-12 col-md-6 turquoise">
+    <div class = "row pt-3">
+      <div class = "col-4 text-center">
+        <i class="fa fa-random fa-4x" aria-hidden="true"></i>
+      </div>
+      <div class = "col-8">
+        <span class = "text-center">
+        <h2>Random</h2>
+        </span>
+        <hr />
+        <ul>
+          <li>View one stat at a time</li>
+          <li>Any category</li>
+          <li>No log-in required</li>
+          <li>All attributes</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class = "col-12 col-md-6 pink">
+    <div class = "row pt-3">
+      <div class = "col-4 text-center">
+        <i class="fa fa-compass fa-4x" aria-hidden="true"></i>
+      </div>
+      <div class = "col-8">
+        <span class = "text-center">
+        <h2>Explore</h2>
+        </span>
+        <hr />
+        <ul>
+          <li>View all stats</li>
+          <li>Filter by category</li>
+          <li>Simple log-in</li>
+          <li>All attributes</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+$(document).ready(function(){
+    $(".frosty").hide(0).delay(200).slideDown("slow")
+});
+</script>

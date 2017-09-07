@@ -84,5 +84,5 @@ test:
 production:
   <<: *default
   database: wwf2_production
-  username: wwf2
-  password: <%= ENV['WWF2_DATABASE_PASSWORD'] %>
+  # username: wwf2
+  # password: <%= ENV['WWF2_DATABASE_PASSWORD'] %>

@@ -1,0 +1,46 @@
+<h1 class = "mt-2 ml-2">All stats</h1>
+<div class = "col-10 offset-1">
+  <div class = "row">
+      <% @stats.each do |stat| %>
+      <div class = "col-lg-6">
+        <div class = "card mx-3">
+          <div class = "card-header">
+            <b>Fact #<%= stat.id %></b>
+          </div>
+          <div class="card-block pt-1">
+            <small class = "text-muted">Categories: </small><span class="badge badge-primary"><%= stat.category.capitalize %></span>
+            <h3 class="card-title text-center my-3 mx-0"><%= stat.fact %></h3>
+            <br />
+            <p class="card-subtitle text-right">- <i><%= stat.source %> (<%= stat.year %>)</i></p>
+          </div>
+          <ul class="list-group list-group-flush">
+            <% if stat.sample.present? %>
+              <li class="list-group-item">
+                <small class = "text-muted"><i class="fa fa-line-chart" aria-hidden="true"></i> Statistics: &nbsp</small>
+                <span class="badge badge-default">n = <%= stat.sample %></span>         
+              </li>
+            <% end %>
+            <li class="list-group-item text-center">
+            <%= link_to stat.link, class: "col-12", target: :_blank do%>
+              <button type="button" class="btn btn-secondary col-12" data-toggle="tooltip" data-placement="top" title="Hint: <%= stat.instruction.capitalize %>">
+                See original
+              </button>
+            <% end %>
+            </li>
+          </ul>
+        </div>
+      <br />
+      </div> 
+    <% end %>
+  </div>
+</div>
+<%= will_paginate @stats, class: 'will_paginate text-center mt-3' %>
+
+<script>
+$(document).ready(function(){
+    $(".card").hide(0).delay(100).fadeIn("slow")
+});
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+})
+</script> 
