@@ -4,11 +4,11 @@
     <h4 class = 'my-1 my-lg-3'>All stats sourced and categorised.</h4>
     <br />
     <br />
-    <%= link_to random_stats_path, class: 'btn btn-turquoise mr-3 col-3' do %>
+    <%= link_to random_stats_path, class: 'btn btn-turquoise mr-3 col-5 col-md-3' do %>
       <i class="fa fa-random" aria-hidden="true"></i>&nbsp
       Random
     <% end %>
-    <%= link_to stats_path, class: 'btn btn-pink ml-3 col-3' do %>
+    <%= link_to stats_path, class: 'btn btn-pink ml-3 col-5 col-md-3' do %>
       <i class="fa fa-compass" aria-hidden="true"></i>&nbsp
       Explore
     <% end %>
@@ -22,18 +22,17 @@
   <div class = "col-12 col-md-6 turquoise">
     <div class = "row pt-3">
       <div class = "col-4 text-center">
-        <i class="fa fa-random fa-4x" aria-hidden="true"></i>
+        <i class="fa fa-random fa-4x mt-5" aria-hidden="true"></i>
       </div>
       <div class = "col-8">
         <span class = "text-center">
         <h2>Random</h2>
         </span>
         <hr />
-        <ul>
-          <li>View one stat at a time</li>
-          <li>Any category</li>
-          <li>No log-in required</li>
-          <li>All attributes</li>
+        <ul class = "no_bullets">
+          <li class = "ticks"><b>Only one</b> stat at a time</li>
+          <li class = "ticks">No log-in required</li>
+          <li class = "ticks">All attributes</li>
         </ul>
       </div>
     </div>
@@ -41,24 +40,53 @@
   <div class = "col-12 col-md-6 pink">
     <div class = "row pt-3">
       <div class = "col-4 text-center">
-        <i class="fa fa-compass fa-4x" aria-hidden="true"></i>
+        <i class="fa fa-compass fa-4x mt-5" aria-hidden="true"></i>
       </div>
       <div class = "col-8">
         <span class = "text-center">
-        <h2>Explore</h2>
+        <h3>Explore</h2>
         </span>
         <hr />
-        <ul>
-          <li>View all stats</li>
-          <li>Filter by category</li>
-          <li>Simple log-in</li>
-          <li>All attributes</li>
+        <ul class = "no_bullets">
+          <li class = "ticks"><b>Browse all</b> stats</li>
+          <li class = "ticks"><b>Filter</b> by category</li>
+          <li class = "ticks">Simple log-in</li>
+          <li class = "ticks">All attributes</li>
         </ul>
       </div>
     </div>
   </div>
 </div>
+<div class = "clear"></div>
+<div class = "row grey">
+  <div class = "col-10 offset-1 text-center">
+    <h2 class = "my-2 my-md-3">About us</h2>
+    <p>
+      Workplace well-being is becoming increasingly important to employees, and consequently to their companies. 
+      <br /><br />
+      We believe companies should be able to stay abreast of what people are thinking.
+      <br />
+      <h5>So we built a free database of stats for your to browse.</h5>
+    </p>
+  </div>
+</div>
+<div class = "clear"></div>
+<div class = "row">
+  <div class = "col-6 text-center">
+    <%= image_tag("screenshot_1.jpg", :alt => "Our fact layout", class: "img-fluid max-width-x mt-3") %>
+  </div>
+  <div class = "col-6 pl-4">
+    <h4 class = "mt-4">All our stats include:</h4>
+    <ul class = "no_bullets">
+      <li class = "ticks">The stat</li>
+      <li class = "ticks">Source</li>
+      <li class = "ticks">Categories</li>
+      <li class = "ticks">Sample sizes, where applicable</li>
+      <li class = "ticks">Hints on where to find the stat in the source. Handy. <small>(Just hover over 'See original')</small></li>
+    </ul>
+  </div>
 
+</div>
 <script>
 $(document).ready(function(){
     $(".frosty").hide(0).delay(200).slideDown("slow")

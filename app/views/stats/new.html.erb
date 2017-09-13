@@ -1,0 +1,17 @@
+<br />
+<div class = "row">
+  <div class = "booyah-box col-xs-10 offset-xs-1 col-md-6 offset-md-3">
+    <h2>New stat</h2>
+    <%= simple_form_for @stat do |f| %>
+      <%= f.input :fact %>
+      <%= f.input :source %>
+      <%= f.input :link, placeholder: "Please paste in full http://... address" %>
+      <%= f.input :year, collection: 2000..Time.now.year %>
+      <%= f.input :sample %>
+      <%= f.input :instruction, label: "Give a brief description of how exactly to find stat in source" %>
+      <%= f.input :tag_list, placeholder: "Please enter tags separated by commas" %>
+      <%= f.submit "Create", class: 'btn btn-primary col-12' %>      
+    <% end %>
+
+  </div>
+</div>

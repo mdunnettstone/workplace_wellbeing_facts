@@ -2,12 +2,21 @@
 
 <div class = "row">
   <div class = "col-10 offset-1 col-md-6 offset-md-3 col-lg-4 offset-lg-4">
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+      The <a href="http://www.seedmusic.co.uk" class="alert-link" target="_blank">one thing</a> that could improve your workplace's productivity, retention and recruitment...
+    </div>
     <div class = "card">
       <div class = "card-header">
         <b>Fact #<%= @stat.id %></b>
       </div>
       <div class="card-block pt-1">
-        <small class = "text-muted">Categories: </small><span class="badge badge-primary"><%= @stat.category.capitalize %></span>
+        <small class = "text-muted">Categories: </small>
+        <% @stat.tag_list.each do |tag| %>
+          <span class="badge badge-primary"><%= tag.capitalize %></span>
+        <% end %>
         <h3 class="card-title text-center my-3 mx-0"><%= @stat.fact %></h3>
         <br />
         <p class="card-subtitle text-right">- <i><%= @stat.source %> (<%= @stat.year %>)</i></p>

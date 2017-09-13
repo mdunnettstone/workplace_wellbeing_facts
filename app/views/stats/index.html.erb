@@ -1,5 +1,19 @@
 <h1 class = "mt-2 ml-2">All stats</h1>
+<h6 class = "ml-2">Filters (click one to filter)</h6>
+<% @all_tags.each do |tag| %>
+  <% if tag == current_tag %>
+    <%= link_to tag.to_s.capitalize, tag_path(tag), class: 'badge badge-default ml-2'%>
+  <% else %>
+    <%= link_to tag.to_s.capitalize, tag_path(tag), class: 'badge badge-primary ml-2'%>
+  <% end %>
+<% end %>
+<% if current_tag.present? %>
+  <%= link_to 'Clear filter', stats_path, class: 'badge badge-info ml-2' %>
+<% end %>
+<hr class = "mt-1 mb-0"/>
 <div class = "col-10 offset-1">
+<br />
+
   <div class = "row">
       <% @stats.each do |stat| %>
       <div class = "col-lg-6">
@@ -8,7 +22,10 @@
             <b>Fact #<%= stat.id %></b>
           </div>
           <div class="card-block pt-1">
-            <small class = "text-muted">Categories: </small><span class="badge badge-primary"><%= stat.category.capitalize %></span>
+            <small class = "text-muted">Categories: </small>
+            <% stat.tag_list.each do |tag| %>
+              <span class="badge badge-primary"><%= tag.capitalize %></span>
+            <% end %>
             <h3 class="card-title text-center my-3 mx-0"><%= stat.fact %></h3>
             <br />
             <p class="card-subtitle text-right">- <i><%= stat.source %> (<%= stat.year %>)</i></p>
@@ -34,7 +51,6 @@
     <% end %>
   </div>
 </div>
-<%= will_paginate @stats, class: 'will_paginate text-center mt-3' %>
 
 <script>
 $(document).ready(function(){

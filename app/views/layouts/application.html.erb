@@ -10,26 +10,26 @@
 
   <body>
     <div id="flex-content-container">
-      <nav class="navbar navbar-toggleable-md navbar-inverse" style="background-color: #006064;">
+      <nav class="navbar sticky-top navbar-toggleable-md navbar-inverse navbar-green">
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <%= link_to 'Workplace Wellbeing Facts', root_path, class: "navbar-brand" %>
         <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
           <ul class="navbar-nav mr-auto mt-2 mt-md-0">
-            <li class="nav-item">
+            <li class="nav-item <%= active_class(root_path) %>">
               <%= link_to root_path, class: "nav-link" do %>
                 <i class="fa fa-home" aria-hidden="true"></i>
                 Home
               <% end %>
             </li>
-            <li class="nav-item active">
+            <li class="nav-item <%= active_class(random_stats_path) %>">
               <%= link_to random_stats_path, class: "nav-link" do %>
                 <i class="fa fa-random" aria-hidden="true"></i>
                 Random
               <% end %>
             </li>
-            <li class="nav-item">
+            <li class="nav-item <%= active_class(stats_path) %>">
               <%= link_to stats_path, class: "nav-link" do %>
                 <i class="fa fa-compass" aria-hidden="true"></i>
                 Explore
@@ -62,10 +62,19 @@
     </div>
     <div id="footer">
       <div class="container">
-        <b>Footer Here</b>
+        <b>Admin options</b>
         <br />
-        <%= link_to 'Link', '#' %>
+        <%= link_to 'Create a new stat', new_stat_path %>
       </div>
     </div>
   </body>
+<script>
+$(window).scroll(function() {
+  if ($(document).scrollTop() > 50) {
+    $('nav').addClass('navbar-transparent');
+  } else {
+    $('nav').removeClass('navbar-transparent');
+  }
+});
+</script>
 </html>
