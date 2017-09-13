@@ -25,9 +25,7 @@
         <i class="fa fa-random fa-4x mt-5" aria-hidden="true"></i>
       </div>
       <div class = "col-8">
-        <span class = "text-center">
         <h2>Random</h2>
-        </span>
         <hr />
         <ul class = "no_bullets">
           <li class = "ticks"><b>Only one</b> stat at a time</li>
@@ -43,9 +41,7 @@
         <i class="fa fa-compass fa-4x mt-5" aria-hidden="true"></i>
       </div>
       <div class = "col-8">
-        <span class = "text-center">
         <h3>Explore</h2>
-        </span>
         <hr />
         <ul class = "no_bullets">
           <li class = "ticks"><b>Browse all</b> stats</li>
@@ -53,6 +49,7 @@
           <li class = "ticks">Simple log-in</li>
           <li class = "ticks">All attributes</li>
         </ul>
+        <%= link_to 'Sign up', new_user_registration_path, class: 'btn btn-secondary col-11 mb-2' %>
       </div>
     </div>
   </div>
@@ -73,7 +70,8 @@
 <div class = "clear"></div>
 <div class = "row">
   <div class = "col-6 text-center">
-    <%= image_tag("screenshot_1.jpg", :alt => "Our fact layout", class: "img-fluid max-width-x mt-3") %>
+  <p class = "mb-0">* This is a screenshot</p>
+    <%= image_tag("screenshot_1.jpg", :alt => "Our fact layout", class: "img-fluid max-width-x") %>
   </div>
   <div class = "col-6 pl-4">
     <h4 class = "mt-4">All our stats include:</h4>
