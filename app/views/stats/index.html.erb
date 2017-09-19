@@ -11,13 +11,13 @@
   <%= link_to 'Clear filter', stats_path, class: 'badge badge-info ml-2' %>
 <% end %>
 <hr class = "mt-1 mb-0"/>
+<div class = "clear"></div>
 <div class = "col-10 offset-1">
 <br />
-
   <div class = "row">
       <% @stats.each do |stat| %>
-      <div class = "col-lg-6">
-        <div class = "card mx-3">
+      <div class = "col-12 col-lg-6">
+        <div class = "card mx-0">
           <div class = "card-header">
             <b>Fact #<%= stat.id %></b>
           </div>
